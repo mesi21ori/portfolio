@@ -64,6 +64,23 @@ export default function Experience() {
     controls.start({ opacity: 1, y: 0 })
   }, [activeExperience, controls])
 
+  useEffect(() => {
+    // Scroll to the active experience on mobile
+    if (containerRef.current && window.innerWidth < 768) {
+      const container = containerRef.current
+      const activeButton = container.querySelector(`button:nth-child(${activeExperience + 1})`)
+      if (activeButton) {
+        const containerRect = container.getBoundingClientRect()
+        const buttonRect = activeButton.getBoundingClientRect()
+        const scrollLeft = buttonRect.left - containerRect.left - containerRect.width / 2 + buttonRect.width / 2
+        container.querySelector(".flex.overflow-x-auto")?.scrollTo({
+          left: scrollLeft,
+          behavior: "smooth",
+        })
+      }
+    }
+  }, [activeExperience])
+
   const handleExperienceClick = (index: number) => {
     controls.start({ opacity: 0, y: 20 }).then(() => {
       setActiveExperience(index)
@@ -73,28 +90,30 @@ export default function Experience() {
   const experience = experiences[activeExperience]
 
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-12 md:py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-12 text-center"
+          className="mb-8 text-center md:mb-12"
         >
-          <h2 className="mb-2 text-3xl font-bold gold-gradient">Professional Experience</h2>
+          <h2 className="mb-2 text-2xl font-bold gold-gradient md:text-3xl">Professional Experience</h2>
           <div className="mx-auto h-1 w-20 bg-primary" />
         </motion.div>
 
         <div className="mx-auto max-w-6xl" ref={containerRef}>
           {/* Timeline Navigation */}
-          <div className="mb-12 flex flex-nowrap overflow-x-auto pb-4 scrollbar-hide md:justify-center">
-            <div className="flex w-full space-x-0">
+          <div className="mb-8 flex overflow-x-auto pb-4 scrollbar-hide md:mb-12 md:justify-center">
+            <div className="flex space-x-6 px-4 md:space-x-8">
               {experiences.map((exp, index) => (
-                <div key={index} className={`relative flex-1 ${index < experiences.length - 1 ? "" : ""}`}>
+                <div key={index} className={`relative flex-shrink-0 ${index < experiences.length - 1 ? "" : ""}`}>
                   {/* Timeline connector */}
                   {index < experiences.length - 1 && (
-                    <div className={`absolute left-1/2 top-[22px] h-0.5 w-full -translate-x-1/2 bg-gray-700`}>
+                    <div
+                      className={`absolute left-1/2 top-[22px] hidden h-0.5 w-full -translate-x-1/2 bg-gray-700 md:block`}
+                    >
                       <div
                         className={`h-full bg-primary transition-all duration-700 ${
                           index < activeExperience ? "w-full" : "w-0"
@@ -108,7 +127,7 @@ export default function Experience() {
                     onClick={() => handleExperienceClick(index)}
                     onMouseEnter={() => setHoverIndex(index)}
                     onMouseLeave={() => setHoverIndex(null)}
-                    className="relative flex w-full flex-col items-center"
+                    className="relative flex flex-col items-center"
                   >
                     <motion.div
                       className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-full border-2 transition-all duration-300 ${
@@ -141,11 +160,18 @@ export default function Experience() {
                     </motion.div>
 
                     <div
-                      className={`mt-2 whitespace-nowrap text-sm font-medium transition-all duration-300 ${
+                      className={`mt-2 whitespace-nowrap text-xs md:text-sm font-medium transition-all duration-300 ${
                         index === activeExperience ? "text-primary" : "text-gray-400"
                       }`}
                     >
-                      {exp.company}
+                      {exp.company === "Ministry of Urban Development and Infrastructure (MUDI)" ? (
+                        <>
+                          <span className="md:hidden">MUDI</span>
+                          <span className="hidden md:inline">{exp.company}</span>
+                        </>
+                      ) : (
+                        exp.company
+                      )}
                     </div>
                   </button>
                 </div>
@@ -182,8 +208,8 @@ export default function Experience() {
                   }}
                 />
 
-                <CardContent className="relative z-10 p-8">
-                  <div className="md:flex md:items-start md:justify-between">
+                <CardContent className="relative z-10 p-4 md:p-6 lg:p-8">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between">
                     <div className="mb-6 md:mb-0 md:w-2/3">
                       <div
                         className="mb-4 inline-block rounded-lg px-3 py-1 text-sm font-medium"
@@ -192,7 +218,7 @@ export default function Experience() {
                         {experience.period}
                       </div>
 
-                      <h3 className="mb-2 text-3xl font-bold" style={{ color: experience.color }}>
+                      <h3 className="mb-2 text-2xl font-bold md:text-3xl" style={{ color: experience.color }}>
                         {experience.title}
                       </h3>
 
@@ -207,11 +233,11 @@ export default function Experience() {
                         </div>
                       </div>
 
-                      <p className="mb-6 text-gray-300">{experience.description}</p>
+                      <p className="mb-6 text-sm text-gray-300 md:text-base">{experience.description}</p>
                     </div>
 
                     <div className="md:w-1/3">
-                      <div className="mb-4 rounded-lg bg-black/50 p-4">
+                      <div className="mb-4 rounded-lg bg-black/50 p-3 md:p-4">
                         <h4 className="mb-3 flex items-center text-lg font-semibold text-white">
                           <Award className="mr-2 h-5 w-5" style={{ color: experience.color }} />
                           Skills
@@ -233,7 +259,7 @@ export default function Experience() {
 
                   <div>
                     <h4 className="mb-4 text-lg font-semibold text-white">Key Achievements</h4>
-                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid gap-4 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                       {experience.achievements.map((achievement, i) => (
                         <motion.div
                           key={i}
@@ -264,7 +290,7 @@ export default function Experience() {
               <button
                 key={index}
                 onClick={() => handleExperienceClick(index)}
-                className={`h-2 transition-all duration-300 rounded-full ${
+                className={`h-2 rounded-full transition-all duration-300 ${
                   activeExperience === index ? "w-8 bg-primary" : "w-2 bg-gray-700 hover:bg-gray-500"
                 }`}
                 style={{

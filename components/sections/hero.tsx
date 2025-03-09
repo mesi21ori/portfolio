@@ -123,7 +123,7 @@ export default function Hero() {
           className="mb-4"
         >
           <h1 className="mb-2 text-4xl font-bold md:text-6xl">
-            <span className="gold-gradient">Mseret Shumet</span>
+            <span className="gold-gradient">Meseret Shumet</span>
           </h1>
           <motion.div
             initial={{ width: 0 }}

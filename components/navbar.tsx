@@ -90,11 +90,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? theme === "dark"
-            ? "bg-black/80 backdrop-blur-md"
-            : "bg-white/80 backdrop-blur-md"
-          : "bg-transparent"
+        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -122,11 +118,7 @@ export default function Navbar() {
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
                   className={`relative text-sm font-medium transition-colors ${
-                    activeSection === item.href.substring(1)
-                      ? "text-primary"
-                      : theme === "dark"
-                        ? "text-gray-300 hover:text-primary"
-                        : "text-gray-700 hover:text-primary"
+                    activeSection === item.href.substring(1) ? "text-primary" : "text-foreground/80 hover:text-primary"
                   }`}
                 >
                   {item.name}
@@ -148,23 +140,28 @@ export default function Navbar() {
         <Button
           variant="ghost"
           size="icon"
-          className={`ml-4 ${theme === "dark" ? "text-gray-300" : "text-gray-700"} hover:text-primary`}
+          className="ml-4 text-foreground/80 hover:text-primary hover:bg-transparent"
           onClick={toggleTheme}
           aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
         >
           {theme === "dark" ? (
             <motion.div initial={{ rotate: 45 }} animate={{ rotate: 0 }} transition={{ duration: 0.3 }}>
-              <Sun className="h-5 w-5" />
+              <Sun className="h-5 w-5 text-primary" />
             </motion.div>
           ) : (
             <motion.div initial={{ rotate: -45 }} animate={{ rotate: 0 }} transition={{ duration: 0.3 }}>
-              <Moon className="h-5 w-5" />
+              <Moon className="h-5 w-5 text-primary" />
             </motion.div>
           )}
         </Button>
 
-        <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden hover:bg-transparent"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X className="h-6 w-6 text-primary" /> : <Menu className="h-6 w-6 text-primary" />}
         </Button>
       </div>
 
@@ -176,7 +173,7 @@ export default function Navbar() {
           exit={{ opacity: 0, height: 0 }}
           className="md:hidden"
         >
-          <div className={`container mx-auto ${theme === "dark" ? "bg-black/95" : "bg-white/95"} px-4 pb-6 pt-2`}>
+          <div className="container mx-auto bg-background/95 px-4 pb-6 pt-2 border-b border-border">
             <ul className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <li key={item.name}>
@@ -186,9 +183,7 @@ export default function Navbar() {
                     className={`block py-2 text-base font-medium ${
                       activeSection === item.href.substring(1)
                         ? "text-primary"
-                        : theme === "dark"
-                          ? "text-gray-300 hover:text-primary"
-                          : "text-gray-700 hover:text-primary"
+                        : "text-foreground/80 hover:text-primary"
                     }`}
                   >
                     {item.name}
