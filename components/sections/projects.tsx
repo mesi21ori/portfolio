@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { ExternalLink, Github, Plus, Code } from 'lucide-react'
+import { ExternalLink, Github, Plus, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
@@ -15,7 +15,7 @@ const projects = [
       "Designed and developed a modern, responsive website with Next.js and Tailwind CSS. Integrated Firebase for real-time database storage.",
     longDescription:
       "This project involved creating a comprehensive website for Lemi Kura Sub City administration. The site features news updates, service information, and administrative details. I implemented real-time updates using Firebase, allowing administrators to publish content instantly. The responsive design ensures accessibility across all devices.",
-      image: "/placeholder.svg?height=400&width=600",
+    image: "/placeholder.svg?height=400&width=600",
     link: "https://reporting.lemikurapp.org",
     github: "https://github.com/mesi21ori",
     tags: ["Next.js", "Tailwind CSS", "Firebase"],
@@ -151,7 +151,7 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Grid Layout with equal height cards */}
+        {/* Grid Layout (replacing masonry columns) */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project, index) => (
             <motion.div
@@ -291,3 +291,4 @@ export default function Projects() {
     </section>
   )
 }
+
