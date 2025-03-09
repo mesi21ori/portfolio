@@ -137,23 +137,6 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          className="ml-4 text-foreground/80 hover:text-primary hover:bg-transparent"
-          onClick={toggleTheme}
-          aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-        >
-          {theme === "dark" ? (
-            <motion.div initial={{ rotate: 45 }} animate={{ rotate: 0 }} transition={{ duration: 0.3 }}>
-              <Sun className="h-5 w-5 text-primary" />
-            </motion.div>
-          ) : (
-            <motion.div initial={{ rotate: -45 }} animate={{ rotate: 0 }} transition={{ duration: 0.3 }}>
-              <Moon className="h-5 w-5 text-primary" />
-            </motion.div>
-          )}
-        </Button>
 
         <Button
           variant="ghost"
