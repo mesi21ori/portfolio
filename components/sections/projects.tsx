@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { ExternalLink, Github, Plus, Code } from "lucide-react"
+import { ExternalLink, Github, Plus, Code } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
@@ -151,8 +151,8 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Masonry Grid Layout */}
-        <div className="columns-1 gap-6 space-y-6 sm:columns-2 lg:columns-3">
+        {/* Grid Layout with equal height cards */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -160,17 +160,17 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="break-inside-avoid"
+              className="h-full"
             >
               <div
-                className="group relative cursor-pointer overflow-hidden rounded-xl backdrop-blur-sm"
+                className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-xl backdrop-blur-sm"
                 onClick={() => openProjectDialog(project.id)}
               >
                 {/* Enhanced golden border effect */}
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#FFD700] via-[#FFA500] to-[#FFD700] opacity-70 animate-pulse-slow" />
 
                 {/* Inner content with padding for the border effect */}
-                <div className="relative m-[2px] rounded-xl bg-black p-5">
+                <div className="relative m-[2px] flex h-full flex-col rounded-xl bg-black p-5">
                   <div className="mb-4 aspect-video overflow-hidden rounded-lg">
                     <div
                       className="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -180,7 +180,7 @@ export default function Projects() {
 
                   <h3 className="mb-2 text-xl font-bold text-white group-hover:text-primary">{project.title}</h3>
 
-                  <p className="mb-4 text-sm text-gray-300 line-clamp-3">{project.description}</p>
+                  <p className="mb-4 flex-grow text-sm text-gray-300 line-clamp-3">{project.description}</p>
 
                   <div className="mb-4 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
@@ -190,7 +190,7 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <div className="flex items-center justify-between">
+                  <div className="mt-auto flex items-center justify-between">
                     <Button
                       size="sm"
                       variant="ghost"
@@ -291,4 +291,3 @@ export default function Projects() {
     </section>
   )
 }
-
