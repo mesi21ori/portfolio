@@ -10,14 +10,14 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 const projects = [
   {
     id: "lemi-kura",
-    title: "Lemi Kura Sub City Website",
+    title: "Lemi Kura Sub City Resporting System",
     description:
       "Designed and developed a modern, responsive website with Next.js and Tailwind CSS. Integrated Firebase for real-time database storage.",
     longDescription:
       "This project involved creating a comprehensive website for Lemi Kura Sub City administration. The site features news updates, service information, and administrative details. I implemented real-time updates using Firebase, allowing administrators to publish content instantly. The responsive design ensures accessibility across all devices.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "#",
-    github: "#",
+    image: "public/lemikura.png?height=400&width=600",
+    link: "https://reporting.lemikurapp.org",
+    github: "https://github.com/mesi21ori",
     tags: ["Next.js", "Tailwind CSS", "Firebase"],
     category: "web",
   },
@@ -30,7 +30,7 @@ const projects = [
       "This enterprise application helps organizations visualize and manage their employee reporting structures. The system features role-based access control, organizational chart visualization, and employee profile management. I implemented the backend using Node.js with Drizzle ORM for efficient database operations and built a responsive frontend with Next.js and TypeScript.",
     image: "/placeholder.svg?height=400&width=600",
     link: "#",
-    github: "#",
+    github: "https://github.com/mesi21ori/mesi-employee-hierarchy",
     tags: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL"],
     category: "web",
   },

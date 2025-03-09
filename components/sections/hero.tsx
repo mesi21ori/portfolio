@@ -160,7 +160,7 @@ export default function Hero() {
           <Button asChild className="gold-border bg-black px-6 py-2 text-primary hover:bg-black/80">
             <a href="#projects">View Projects</a>
           </Button>
-          <Button asChild variant="outline" className="border-primary px-6 py-2 text-primary hover:bg-primary/10">
+          <Button asChild variant="outline" className="gold-border bg-black px-6 py-2 text-primary hover:bg-black/80">
             <a href="#contact">Contact Me</a>
           </Button>
         </motion.div>
