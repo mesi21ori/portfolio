@@ -15,7 +15,7 @@ const projects = [
       "Designed and developed a modern, responsive website with Next.js and Tailwind CSS. Integrated Firebase for real-time database storage.",
     longDescription:
       "This project involved creating a comprehensive website for Lemi Kura Sub City administration. The site features news updates, service information, and administrative details. I implemented real-time updates using Firebase, allowing administrators to publish content instantly. The responsive design ensures accessibility across all devices.",
-    image: "public/lemikura.png?height=400&width=600",
+    image: "/placeholder.svg?height=400&width=600",
     link: "https://reporting.lemikurapp.org",
     github: "https://github.com/mesi21ori",
     tags: ["Next.js", "Tailwind CSS", "Firebase"],
