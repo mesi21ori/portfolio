@@ -15,10 +15,23 @@ const projects = [
       "Designed and developed a modern, responsive website with Next.js and Tailwind CSS. Integrated Firebase for real-time database storage.",
     longDescription:
       "This project involved creating a comprehensive website for Lemi Kura Sub City administration. The site features news updates, service information, and administrative details. I implemented real-time updates using Firebase, allowing administrators to publish content instantly. The responsive design ensures accessibility across all devices.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/lemikura.png",
     link: "https://reporting.lemikurapp.org",
     github: "https://github.com/mesi21ori",
     tags: ["Next.js", "Tailwind CSS", "Firebase"],
+    category: "web",
+  },
+  {
+    id: "travel-tour",
+    title: "Travel Tour Web Application",
+    description:
+      "Created an interactive travel platform with JavaScript, React, PHP, and MySQL, featuring map-based navigation and a responsive UI.",
+    longDescription:
+      "This travel platform showcases Ethiopian tourist destinations with interactive maps, detailed information, and booking capabilities. Users can explore locations, view photos and reviews, and plan their itineraries. The application features a responsive design that works seamlessly on mobile devices, making it perfect for travelers on the go.",
+    image: "/placeholder.svg?height=400&width=600",
+    link: "https://travel-tour-project.vercel.app",
+    github: "https://github.com/mesi21ori/Travel-tour",
+    tags: ["JavaScript", "React"],
     category: "web",
   },
   {
@@ -49,39 +62,13 @@ const projects = [
   },
  
   {
-    id: "travel-tour",
-    title: "Travel Tour Web Application",
-    description:
-      "Created an interactive travel platform with JavaScript, React, PHP, and MySQL, featuring map-based navigation and a responsive UI.",
-    longDescription:
-      "This travel platform showcases Ethiopian tourist destinations with interactive maps, detailed information, and booking capabilities. Users can explore locations, view photos and reviews, and plan their itineraries. The application features a responsive design that works seamlessly on mobile devices, making it perfect for travelers on the go.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://travel-tour-project.vercel.app",
-    github: "https://github.com/mesi21ori/Travel-tour",
-    tags: ["JavaScript", "React"],
-    category: "web",
-  },
-  {
-    id: "ethiopian-history",
-    title: "Ethiopian History Preservation System",
-    description:
-      "Built a centralized platform for safeguarding Ethiopia's historical heritage using Next.js, TypeScript, and PostgreSQL. Received an 'A' for this final graduation project.",
-    longDescription:
-      "The Ethiopian History Preservation System is a digital archive that documents and preserves historical artifacts, documents, and cultural heritage. The platform includes advanced search capabilities, multimedia galleries, and educational resources. As my graduation project, I implemented comprehensive data models for various historical artifacts and created an intuitive interface for researchers and the general public.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "#",
-    github: "https://github.com/mesi21ori/FinalHub",
-    tags: ["Next.js", "TypeScript", "PostgreSQL"],
-    category: "web",
-  },
-  {
     id: "ui-ux-projects",
     title: "UI/UX Design Projects",
     description:
       "Designed various UI/UX projects, including responsive web application interfaces, magazine layouts, logos, and flyers.",
     longDescription:
       "My design portfolio includes a diverse range of projects from web interfaces to print materials. I've created user-centered designs for applications, developed brand identities for businesses, and designed editorial layouts for publications. Each project follows a thorough design process including research, wireframing, prototyping, and user testing to ensure optimal results.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/uiux.png",
     tags: ["Figma", "Adobe Photoshop", "Adobe Illustrator"],
     category: "design",
   },
