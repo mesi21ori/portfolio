@@ -12,7 +12,7 @@ const projects = [
     id: "lemi-kura",
     title: "Lemi Kura Sub City Resporting System",
     description:
-      "Designed and developed a modern, responsive website with Next.js and Tailwind CSS. Integrated Firebase for real-time database storage.",
+      "Designed and developed a modern, responsive website with react and Tailwind CSS.",
     longDescription:
       "This project involved creating a comprehensive website for Lemi Kura Sub City administration. The site features news updates, service information, and administrative details. I implemented real-time updates using Firebase, allowing administrators to publish content instantly. The responsive design ensures accessibility across all devices.",
     image: "/lemikura.png",
