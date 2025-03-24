@@ -150,7 +150,6 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Grid Layout (replacing masonry columns) */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project, index) => (
             <motion.div
@@ -165,10 +164,8 @@ export default function Projects() {
                 className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-xl backdrop-blur-sm"
                 onClick={() => openProjectDialog(project.id)}
               >
-                {/* Enhanced golden border effect */}
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#FFD700] via-[#FFA500] to-[#FFD700] opacity-70 animate-pulse-slow" />
 
-                {/* Inner content with padding for the border effect */}
                 <div className="relative m-[2px] flex h-full flex-col rounded-xl bg-black p-5">
                   <div className="mb-4 aspect-video overflow-hidden rounded-lg">
                     <div
@@ -232,8 +229,6 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
-
-        {/* Project Detail Dialog */}
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogContent className="max-w-3xl bg-black/95 text-white backdrop-blur-md">
             {selectedProject && (
