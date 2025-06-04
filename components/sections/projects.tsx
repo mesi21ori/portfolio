@@ -14,11 +14,11 @@ const projects = [
     description:
       "Designed and developed a modern, responsive website with react and Tailwind CSS.",
     longDescription:
-      "This project involved creating a comprehensive website for Lemi Kura Sub City administration. The site features news updates, service information, and administrative details. I implemented real-time updates using Firebase, allowing administrators to publish content instantly. The responsive design ensures accessibility across all devices.",
+      "This project involved creating a comprehensive website for Lemi Kura Sub City administration. The site features news updates, service information, and administrative details. I implemented real-time update , allowing administrators to publish content instantly. The responsive design ensures accessibility across all devices.",
     image: "/lemikura.png",
     link: "https://reporting.lemikurapp.org",
     github: "https://github.com/mesi21ori",
-    tags: ["Next.js", "Tailwind CSS", "Firebase"],
+    tags: ["Next.js", "Tailwind CSS"],
     category: "web",
   },
   {
@@ -28,7 +28,7 @@ const projects = [
       "Created an interactive travel platform with JavaScript, React, PHP, and MySQL, featuring map-based navigation and a responsive UI.",
     longDescription:
       "This travel platform showcases Ethiopian tourist destinations with interactive maps, detailed information, and booking capabilities. Users can explore locations, view photos and reviews, and plan their itineraries. The application features a responsive design that works seamlessly on mobile devices, making it perfect for travelers on the go.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/travel.jpg?height=400&width=600",
     link: "https://travel-tour-project.vercel.app",
     github: "https://github.com/mesi21ori/Travel-tour",
     tags: ["JavaScript", "React"],
@@ -41,7 +41,7 @@ const projects = [
       "Developed a web application with Next.js, Tailwind CSS, ShadCN UI components, and TypeScript. Implemented backend functionalities using Node.js and Drizzle ORM with PostgreSQL, focusing on user authentication and hierarchical tracking.",
     longDescription:
       "This enterprise application helps organizations visualize and manage their employee reporting structures. The system features role-based access control, organizational chart visualization, and employee profile management. I implemented the backend using Node.js with Drizzle ORM for efficient database operations and built a responsive frontend with Next.js and TypeScript.",
-    image: "placeholder.svg?height=400&width=600",
+    image: "empolyee.jpg?height=400&width=600",
     link: "#",
     github: "https://github.com/mesi21ori/mesi-employee-hierarchy",
     tags: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL"],
@@ -54,7 +54,7 @@ const projects = [
       "Built a centralized platform for safeguarding Ethiopia's historical heritage using Next.js, TypeScript, and PostgreSQL. Received an 'A' for this final graduation project.",
     longDescription:
       "The Ethiopian History Preservation System is a digital archive that documents and preserves historical artifacts, documents, and cultural heritage. The platform includes advanced search capabilities, multimedia galleries, and educational resources. As my graduation project, I implemented comprehensive data models for various historical artifacts and created an intuitive interface for researchers and the general public.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/ehp.jpg?height=400&width=600",
     link: "#",
     github: "https://github.com/mesi21ori/FinalHub",
     tags: ["Next.js", "TypeScript", "PostgreSQL"],

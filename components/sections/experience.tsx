@@ -28,14 +28,14 @@ const experiences = [
     location: "Addis Ababa",
     period: "November 2024 - Present",
     description:
-      "Developed a modern website using Next.js and Tailwind CSS, integrating Firebase for real-time updates and incorporating dark mode for enhanced accessibility.",
-    skills: ["Next.js", "Tailwind CSS", "Firebase"],
+      "Developed a modern website using Next.js and Tailwind CSS, Integrating with the backend for real-time updates and incorporating dark mode for improved accessibility.",
+    skills: ["Next.js", "Tailwind CSS"],
     achievements: [
       "Built a complete company website from scratch in 3 weeks",
-      "Integrated real-time data updates using Firebase",
+      "Integrating with the backend for real-time updates",
       "Implemented dark mode and accessibility features",
     ],
-    color: "#EF4444", // Red
+    color: "#EF4444",
   },
   {
     title: "IT Intern",

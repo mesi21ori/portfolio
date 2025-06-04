@@ -58,7 +58,7 @@ const skillCategories = [
     skills: [
       { name: "PostgreSQL", icon: <Database className="h-6 w-6 text-blue-500" /> },
       { name: "MySQL", icon: <Database className="h-6 w-6 text-orange-500" /> },
-      { name: "Firebase", icon: <Server className="h-6 w-6 text-yellow-500" /> },
+      
     ],
   },
   {
